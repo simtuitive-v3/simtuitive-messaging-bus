@@ -62,7 +62,7 @@ public class MessagingService implements IMessagingService {
       * 6. Specification of the name of the call back --> TopicName + "MessageProcessorCallBack"
       * 7. Ex : If Topic Name is {FulfilmentOps} the the call back --> "FulfilmentOpsMessageProcessorCallBack"
       * 8. Each service will configure a property in the service's {application.properties} file as 
-      *    consumer.callback.package.path = com.hp.messaging.service.callback
+      *    consumer.callback.package.path = com.simtuitive.core.messaging.service.callback
       * 9. {consumerCallBackPackagePath}, this is the new parameter injected into this method invocation.
       * 10.All the required call backs will be dynamically loaded and instantiated by the messaging service.
       */
@@ -91,7 +91,7 @@ public class MessagingService implements IMessagingService {
   /*
    * (non-Javadoc)
    * 
-   * @see com.hp.messaging.service.IProducerService#publishMessage(java.util.List, org.json.JSONObject)
+   * @see com.simtuitive.core.messaging.service.IProducerService#publishMessage(java.util.List, org.json.JSONObject)
    */
   @Override
   public void publishMessage(List<String> topicNames, String messageStr, Map<String, ProducerCallback> topicProducerCallBackMap)
