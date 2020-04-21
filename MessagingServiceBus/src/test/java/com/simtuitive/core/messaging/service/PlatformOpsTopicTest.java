@@ -15,10 +15,14 @@ import com.simtuitive.core.messaging.service.MessagingService;
 public class PlatformOpsTopicTest {
   
   public static void main(String[] args) {
-    String msg = "{\"message\": \"Shipping is ready to consume\"}";
-       
+    String msg = "{\"message\": \"Invite to client is ready to sent\"}";
+    /**
+     *  If consumer state fails dynamically, this call back will take care of the payload.
+     *  {PlatformOps} The Named Topic.
+     */
     IConsumerStateCallback conStateCallback = new ConsumerStateFailureCallback();
     Map<String,IConsumerCallback> topicCallBackMap = new HashMap<String, IConsumerCallback>();
+    //Processing Unit
     FulfilmentOpsMessageProcessorCallBack fulObjCallBack = new FulfilmentOpsMessageProcessorCallBack();
     topicCallBackMap.put("FulfilmentOps",fulObjCallBack);
     try{

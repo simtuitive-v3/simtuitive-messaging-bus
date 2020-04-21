@@ -21,6 +21,9 @@ public class MessagingServicesTest {
   static IMessagingService iMsgService = null;
   static Map<String,IConsumerCallback> topicCallBackMap = new HashMap<String, IConsumerCallback>();
   static IConsumerStateCallback conStateCallback = new ConsumerStateFailureCallback();
+  /**
+   * On the broker {FulfilmentOps} Topic should be created, assuming a name.
+   */
   static{
 	  FulfilmentOpsMessageProcessorCallBack fulObjCallBack = new FulfilmentOpsMessageProcessorCallBack();
 	  topicCallBackMap.put("FulfilmentOps",fulObjCallBack);
@@ -45,6 +48,10 @@ public class MessagingServicesTest {
   @Test
   public void testAuthorize() {
     try{
+    	 /**
+    	  *  {Broker IP:Port, is injected from the client.
+    	  *  Hence, it spread across the cluster, {Broker 1} { Broker 2} and so on
+    	  */
          iMsgService = MessagingService.getMessagingService("localhost:9092","orderService",topicCallBackMap,null,null,conStateCallback);
     }catch (Exception e) {
       e.printStackTrace(System.err);

@@ -14,9 +14,9 @@ import com.simtuitive.core.messaging.service.MessagingService;
  */
 public class FulfilmentOpsTopicTest {
   public static void main(String[] args) {
-    String msg1 = "{\"message\": \"order is created\"}";
-    String msg2 = "{\"message\": \"shipping is created\"}";
-    String msg3 = "{\"message\": \"payment is created\"}";
+    String msg1 = "{\"message\": \"Invite To Client is Sent\"}";
+    String msg2 = "{\"message\": \"Learner is created\"}";
+    String msg3 = "{\"message\": \"Payment is created\"}";
         
     IConsumerStateCallback conStateCallback = new ConsumerStateFailureCallback();
     Map<String,IConsumerCallback> topicCallBackMap = new HashMap<String, IConsumerCallback>();

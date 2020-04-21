@@ -13,6 +13,7 @@ public class ConsumerStateFailureCallback implements IConsumerStateCallback{
 	    /**
 	     * Process the exception appropriately, in the client...
 	     */
+	    LOGGER.info("Save The Message Payload For Furture Processing...");
 	}
 
 }
